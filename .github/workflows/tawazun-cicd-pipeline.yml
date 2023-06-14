@@ -34,7 +34,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ env.DOCKER_USERNAME }}/cicd-tawzun-javaspring:latest
+          tags: ${{ env.DOCKER_USERNAME }}/cptest-goldenwaste-sda-hackathon:latest
 
   eb_deploy:
     needs: build_and_push
