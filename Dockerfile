@@ -1,8 +1,8 @@
 FROM maven:3.8.6-openjdk-11 as maven
-ENV DB_URL=localhost
-ENV DB_NAME=tawazun
-ENV DB_USERNAME=root
-ENV DB_PASSWORD=DevOps@2022
+ENV DB_URL= http://mysql-serverless.cluster-chzveui56egk.us-east-1.rds.amazonaws.com/
+ENV DB_NAME=goldendb
+ENV DB_USERNAME=cpadmin
+ENV DB_PASSWORD=CvwzjRgmx7azKH8
 ENV DB_PORT=3306
 WORKDIR /app
 COPY pom.xml .
