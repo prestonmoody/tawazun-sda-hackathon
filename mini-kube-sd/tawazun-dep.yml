@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tawazun-k8s-app
+spec:
+  selector:
+    matchLabels:
+      app: golden-k8s
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: golden-k8s
+    spec:
+      containers:
+        - name: golden-k8s
+          image: pmoody199/tawazun-k8
+          env:
+          - name: DB_URL
+            value: mysql-serverless.cluster-chzveui56egk.us-east-1.rds.amazonaws.com
+          - name: DB_PORT
+            value: '3306'
+          - name: DB_NAME
+            value: goldendb
+          - name: DB_USERNAME
+            value: cpadmin
+          - name: DB_PASSWORD
+            value: CvwzjRgmx7azKH8
+          ports:
+            - containerPort: 8080
